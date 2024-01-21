@@ -1,0 +1,5 @@
+build/
+install/
+documentation/
+.vscode/
+.cache/

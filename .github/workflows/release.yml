@@ -1,0 +1,41 @@
+name: 'Bayan release'
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo apt update && sudo apt install cmake libgtest-dev -y
+      - run: cmake -DCMAKE_BUILD_TYPE=Release -DPATCH_VERSION=${{ github.run_number }} .
+      - run: cmake --build . --target install
+      - run: cmake --build . --target test
+      - run: cmake --build . --target package
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.run_number }}
+          release_name: v${{ github.run_number }}
+          draft: false
+          prerelease: false
+      
+      - name: Upload Release Asset
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./bayan-0.0.${{ github.run_number }}-Linux.deb
+          asset_name: bayan-0.0.${{ github.run_number }}-Linux.deb
+          asset_content_type: application/vnd.debian.binary-package
