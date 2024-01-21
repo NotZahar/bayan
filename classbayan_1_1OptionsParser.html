@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>bayan: Класс bayan::OptionsParser</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">bayan
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Утилита для обнаружения файлов-дубликатов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacebayan.html">bayan</a></li><li class="navelem"><a class="el" href="classbayan_1_1OptionsParser.html">OptionsParser</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="classbayan_1_1OptionsParser-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс bayan::OptionsParser</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="options__parser_8hpp_source.html">options_parser.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbayan_1_1OptionsParser_1_1Options.html">Options</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a8a96b5d850feafb775d016762f74b55e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#a8a96b5d850feafb775d016762f74b55e">scanLevel</a> : unsigned int { <a class="el" href="classbayan_1_1OptionsParser.html#a8a96b5d850feafb775d016762f74b55ea2468355205369829e2c85cab68885994">current</a>
+, <a class="el" href="classbayan_1_1OptionsParser.html#a8a96b5d850feafb775d016762f74b55eab48bf3446f6e1024126c8a06a6ea442b">all</a>
+ }</td></tr>
+<tr class="separator:a8a96b5d850feafb775d016762f74b55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a251ee8e25a84ee96f563f477926c797c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797c">hashAlgorithm</a> : unsigned int { <a class="el" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca058063301b99cb43d6165291cb9f086a">crc32</a>
+, <a class="el" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca1bc29b36f623ba82aaf6724fd3b16718">md5</a>
+ }</td></tr>
+<tr class="separator:a251ee8e25a84ee96f563f477926c797c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e6bbf831885e23f264f9207eebd5731"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#a6e6bbf831885e23f264f9207eebd5731">options_description</a> = boost::program_options::options_description</td></tr>
+<tr class="separator:a6e6bbf831885e23f264f9207eebd5731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6259b1e6b41c79ab8a7a301b3dee0365"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#a6259b1e6b41c79ab8a7a301b3dee0365">OptionsParser</a> ()=delete</td></tr>
+<tr class="separator:a6259b1e6b41c79ab8a7a301b3dee0365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18acef754160a06ea6fce96f4e14e5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#ac18acef754160a06ea6fce96f4e14e5b">OptionsParser</a> (int argc, char **argv)</td></tr>
+<tr class="separator:ac18acef754160a06ea6fce96f4e14e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210b70d30f1c7881d820c91cd864afe4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#a210b70d30f1c7881d820c91cd864afe4">~OptionsParser</a> ()=default</td></tr>
+<tr class="separator:a210b70d30f1c7881d820c91cd864afe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47926ce30e911d109495d0452edd56c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbayan_1_1OptionsParser_1_1Options.html">Options</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#ae47926ce30e911d109495d0452edd56c">getOptions</a> () const</td></tr>
+<tr class="separator:ae47926ce30e911d109495d0452edd56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:a1ee9b222d081ba26ea0814df29da9b46"><td class="memItemLeft" align="right" valign="top">static const boost::bimap&lt; std::string, <a class="el" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797c">hashAlgorithm</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayan_1_1OptionsParser.html#a1ee9b222d081ba26ea0814df29da9b46">hashAlgorithms</a></td></tr>
+<tr class="separator:a1ee9b222d081ba26ea0814df29da9b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Определения типов</h2>
+<a id="a6e6bbf831885e23f264f9207eebd5731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6bbf831885e23f264f9207eebd5731">&#9670;&nbsp;</a></span>options_description</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbayan_1_1OptionsParser.html#a6e6bbf831885e23f264f9207eebd5731">bayan::OptionsParser::options_description</a> =  boost::program_options::options_description</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a251ee8e25a84ee96f563f477926c797c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251ee8e25a84ee96f563f477926c797c">&#9670;&nbsp;</a></span>hashAlgorithm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797c">bayan::OptionsParser::hashAlgorithm</a> : unsigned int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a251ee8e25a84ee96f563f477926c797ca058063301b99cb43d6165291cb9f086a"></a>crc32&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a251ee8e25a84ee96f563f477926c797ca1bc29b36f623ba82aaf6724fd3b16718"></a>md5&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a8a96b5d850feafb775d016762f74b55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a96b5d850feafb775d016762f74b55e">&#9670;&nbsp;</a></span>scanLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbayan_1_1OptionsParser.html#a8a96b5d850feafb775d016762f74b55e">bayan::OptionsParser::scanLevel</a> : unsigned int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a8a96b5d850feafb775d016762f74b55ea2468355205369829e2c85cab68885994"></a>current&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8a96b5d850feafb775d016762f74b55eab48bf3446f6e1024126c8a06a6ea442b"></a>all&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a6259b1e6b41c79ab8a7a301b3dee0365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6259b1e6b41c79ab8a7a301b3dee0365">&#9670;&nbsp;</a></span>OptionsParser() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bayan::OptionsParser::OptionsParser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac18acef754160a06ea6fce96f4e14e5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac18acef754160a06ea6fce96f4e14e5b">&#9670;&nbsp;</a></span>OptionsParser() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bayan::OptionsParser::OptionsParser </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a210b70d30f1c7881d820c91cd864afe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210b70d30f1c7881d820c91cd864afe4">&#9670;&nbsp;</a></span>~OptionsParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bayan::OptionsParser::~OptionsParser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ae47926ce30e911d109495d0452edd56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47926ce30e911d109495d0452edd56c">&#9670;&nbsp;</a></span>getOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbayan_1_1OptionsParser_1_1Options.html">OptionsParser::Options</a> bayan::OptionsParser::getOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a1ee9b222d081ba26ea0814df29da9b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee9b222d081ba26ea0814df29da9b46">&#9670;&nbsp;</a></span>hashAlgorithms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const boost::bimap&lt;std::string, <a class="el" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797c">hashAlgorithm</a>&gt; bayan::OptionsParser::hashAlgorithms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">= </div>
+<div class="line">            boost::assign::list_of&lt;boost::bimap&lt;std::string, hashAlgorithm&gt;::relation&gt;</div>
+<div class="line">            ( <span class="stringliteral">&quot;crc32&quot;</span>, <a class="code" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca058063301b99cb43d6165291cb9f086a">hashAlgorithm::crc32</a> )</div>
+<div class="line">            ( <span class="stringliteral">&quot;md5&quot;</span>, <a class="code" href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca1bc29b36f623ba82aaf6724fd3b16718">hashAlgorithm::md5</a> )</div>
+<div class="ttc" id="aclassbayan_1_1OptionsParser_html_a251ee8e25a84ee96f563f477926c797ca058063301b99cb43d6165291cb9f086a"><div class="ttname"><a href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca058063301b99cb43d6165291cb9f086a">bayan::OptionsParser::hashAlgorithm::crc32</a></div><div class="ttdeci">@ crc32</div></div>
+<div class="ttc" id="aclassbayan_1_1OptionsParser_html_a251ee8e25a84ee96f563f477926c797ca1bc29b36f623ba82aaf6724fd3b16718"><div class="ttname"><a href="classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca1bc29b36f623ba82aaf6724fd3b16718">bayan::OptionsParser::hashAlgorithm::md5</a></div><div class="ttdeci">@ md5</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>libs/Bayan/include/<a class="el" href="options__parser_8hpp_source.html">options_parser.hpp</a></li>
+<li>libs/Bayan/src/<a class="el" href="options__parser_8cpp.html">options_parser.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
