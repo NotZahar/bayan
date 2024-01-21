@@ -5,7 +5,7 @@ project("Bayan" VERSION 0.0.1)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Boost 1.82 REQUIRED COMPONENTS 
+find_package(Boost 1.74 REQUIRED COMPONENTS 
     filesystem 
     program_options)
 
