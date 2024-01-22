@@ -22,9 +22,11 @@ jobs:
 
       - uses: actions/checkout@v3
       - run: sudo apt update && sudo apt install cmake libgtest-dev -y
-      - run: cmake -DCMAKE_BUILD_TYPE=Release -DPATCH_VERSION=${{ github.run_number }} . \
-            -DBoost_INCLUDE_DIR=${{steps.install_boost.outputs.BOOST_ROOT}}/include \
+      - run: cmake . -DCMAKE_BUILD_TYPE=Release -DPATCH_VERSION=${{ github.run_number }}\
+            -DBoost_INCLUDE_DIR=${{steps.install_boost.outputs.BOOST_ROOT}}/include\
             -DBoost_LIBRARY_DIRS=${{steps.install_boost.outputs.BOOST_ROOT}}/lib
+        env:
+            BOOST_ROOT: ${{ steps.install_boost.outputs.BOOST_ROOT }}
       - run: cmake --build . --target install
       - run: cmake --build . --target test
       - run: cmake --build . --target package
