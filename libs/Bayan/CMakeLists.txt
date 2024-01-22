@@ -5,7 +5,7 @@ project("Bayan" VERSION 0.0.1)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Boost 1.74 REQUIRED COMPONENTS 
+find_package(Boost 1.82 REQUIRED COMPONENTS 
     filesystem 
     program_options)
 
@@ -14,6 +14,7 @@ add_library(${PROJECT_NAME} STATIC)
 target_sources(${PROJECT_NAME}
     PRIVATE
         src/options_parser.cpp
+        src/find_duplicates.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -30,6 +31,7 @@ target_include_directories(${PROJECT_NAME}
 # without it public headers won't get installed
 set(PUBLIC_HEADERS
     include/options_parser.hpp
+    include/find_duplicates.hpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
@@ -41,6 +43,8 @@ target_link_libraries(${PROJECT_NAME}
 if(CMAKE_COMPILER_IS_GNUCXX)
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Werror -pedantic)
 endif()
+
+file(COPY resources/test DESTINATION ${CMAKE_BINARY_DIR})
 
 # where to find our CMake modules
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <options_parser.hpp>
+#include <find_duplicates.hpp>
 
 int main(int argc, char** argv) {
     bayan::OptionsParser op(argc, argv);
@@ -10,6 +11,8 @@ int main(int argc, char** argv) {
         return 0;
     }
 
-    std::cout << options;
+    bayan::FindDuplicates fd(std::move(options));
+    std::cout << fd.duplicates();
+
     return 0;
 }

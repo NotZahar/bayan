@@ -5,6 +5,16 @@
 #include <iostream>
 
 namespace bayan {
+    enum scanLevel : unsigned int {
+        current,
+        all
+    };
+
+    enum class hashAlgorithm : unsigned int {
+        crc32,
+        md5
+    };
+
     namespace messages {
         struct general {
             inline static const std::string HELP_HEADER = "Парамеры";

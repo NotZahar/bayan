@@ -3,7 +3,6 @@
 
 #include <cassert>
 #include <iostream>
-#include <map>
 #include <memory>
 
 #include <boost/bimap.hpp>
@@ -16,16 +15,6 @@ namespace bayan {
     class OptionsParser {
     public:
         using options_description = boost::program_options::options_description;
-
-        enum scanLevel : unsigned int {
-            current,
-            all
-        };
-
-        enum class hashAlgorithm : unsigned int {
-            crc32,
-            md5
-        };
 
         inline static const boost::bimap<std::string, hashAlgorithm> hashAlgorithms = 
             boost::assign::list_of<boost::bimap<std::string, hashAlgorithm>::relation>
