@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hashalgorithm_130',['hashAlgorithm',['../classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797c',1,'bayan::OptionsParser']]]
+  ['hashalgorithm_141',['hashAlgorithm',['../namespacebayan.html#a6c9e7c798ad66b9e4be5bdac54ef967f',1,'bayan']]]
 ];

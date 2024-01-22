@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getoptions_82',['getOptions',['../classbayan_1_1OptionsParser.html#ae47926ce30e911d109495d0452edd56c',1,'bayan::OptionsParser']]]
+  ['duplicates_90',['duplicates',['../classbayan_1_1FindDuplicates.html#acba0a41e3931d625814ad97484a93e3d',1,'bayan::FindDuplicates']]]
 ];

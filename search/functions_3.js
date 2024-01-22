@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['test_86',['TEST',['../bayan_8cpp.html#ac6916b8f6546d0ac6b2a3ad34c49e33c',1,'bayan.cpp']]],
-  ['throwerror_87',['throwError',['../structbayan_1_1Utility.html#a7570fed6d5bff949c94a8c24e75d5510',1,'bayan::Utility']]]
+  ['main_93',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp'],['../bayan_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;bayan.cpp']]]
 ];

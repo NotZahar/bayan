@@ -29,7 +29,9 @@ var menudata={children:[
 {text:"Пространства имен",url:"namespaces.html"},
 {text:"Члены пространств имен",url:"namespacemembers.html",children:[
 {text:"Указатель",url:"namespacemembers.html"},
-{text:"Функции",url:"namespacemembers_func.html"}]}]},
+{text:"Функции",url:"namespacemembers_func.html"},
+{text:"Перечисления",url:"namespacemembers_enum.html"},
+{text:"Элементы перечислений",url:"namespacemembers_eval.html"}]}]},
 {text:"Классы",url:"annotated.html",children:[
 {text:"Классы",url:"annotated.html"},
 {text:"Алфавитный указатель классов",url:"classes.html"},
@@ -37,7 +39,6 @@ var menudata={children:[
 {text:"Указатель",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
 {text:"b",url:"functions.html#index_b"},
-{text:"c",url:"functions.html#index_c"},
 {text:"d",url:"functions.html#index_d"},
 {text:"e",url:"functions.html#index_e"},
 {text:"f",url:"functions.html#index_f"},
@@ -62,8 +63,6 @@ var menudata={children:[
 {text:"l",url:"functions_vars.html#index_l"},
 {text:"s",url:"functions_vars.html#index_s"}]},
 {text:"Определения типов",url:"functions_type.html"},
-{text:"Перечисления",url:"functions_enum.html"},
-{text:"Элементы перечислений",url:"functions_eval.html"},
 {text:"Относящиеся к классу функции",url:"functions_rela.html"}]}]},
 {text:"Файлы",url:"files.html",children:[
 {text:"Файлы",url:"files.html"},

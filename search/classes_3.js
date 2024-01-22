@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['options_71',['Options',['../structbayan_1_1OptionsParser_1_1Options.html',1,'bayan::OptionsParser']]],
-  ['optionsparser_72',['OptionsParser',['../classbayan_1_1OptionsParser.html',1,'bayan']]]
+  ['general_76',['general',['../structbayan_1_1messages_1_1general.html',1,'bayan::messages']]]
 ];

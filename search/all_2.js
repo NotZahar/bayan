@@ -1,6 +1,6 @@
 var searchData=
 [
   ['commands_12',['commands',['../structbayan_1_1messages_1_1commands.html',1,'bayan::messages']]],
-  ['crc32_13',['crc32',['../classbayan_1_1OptionsParser.html#a251ee8e25a84ee96f563f477926c797ca058063301b99cb43d6165291cb9f086a',1,'bayan::OptionsParser']]],
-  ['current_14',['current',['../classbayan_1_1OptionsParser.html#a8a96b5d850feafb775d016762f74b55ea2468355205369829e2c85cab68885994',1,'bayan::OptionsParser']]]
+  ['crc32_13',['crc32',['../namespacebayan.html#a6c9e7c798ad66b9e4be5bdac54ef967fa058063301b99cb43d6165291cb9f086a',1,'bayan']]],
+  ['current_14',['current',['../namespacebayan.html#acd30b14027858a29aeb308d029a5ec72a4b3928a5db1f5d996fa2edae70f14fe5',1,'bayan']]]
 ];

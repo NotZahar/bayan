@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_83',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp'],['../bayan_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;bayan.cpp']]]
+  ['findduplicates_91',['FindDuplicates',['../classbayan_1_1FindDuplicates.html#abafa29fdb6be05ac0e37fa89cdb2cc69',1,'bayan::FindDuplicates::FindDuplicates()=delete'],['../classbayan_1_1FindDuplicates.html#a7e90ac128fc362860f0ab2ae2a803263',1,'bayan::FindDuplicates::FindDuplicates(OptionsParser::Options options)']]]
 ];

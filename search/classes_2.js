@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['general_70',['general',['../structbayan_1_1messages_1_1general.html',1,'bayan::messages']]]
+  ['findduplicates_75',['FindDuplicates',['../classbayan_1_1FindDuplicates.html',1,'bayan']]]
 ];
