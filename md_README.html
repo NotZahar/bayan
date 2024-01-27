@@ -72,7 +72,7 @@ $(function() {
 <p><b>-h</b> печать описания параметров <br  />
  <b>-d</b> директория для сканирования <br  />
  <b>-e</b> директория для исключения из сканирования <br  />
- <b>-l</b> уровень сканирования (<code>0</code> - только указанные директории, <code>1</code> - все директории) <br  />
+ <b>-l</b> уровень сканирования (<code>0</code> - только указанные директории, <code>1</code> - указанные + вложенные) <br  />
  <b>-f</b> минимальный размер файла (&gt;= <code>1</code>) <br  />
  <b>-m</b> маски имен файлов разрешенных для сравнения (регулярное выражение, параметр указывается в конце) <br  />
  <b>-b</b> размер блока чтения <br  />
@@ -80,7 +80,7 @@ $(function() {
 </p>
 <h4><a class="anchor" id="autotoc_md2"></a>
 Пример:</h4>
-<p><code>bayan -d./dir1 -d"../dir 2" -e./dir1 -e"../nested dir 2" -l0 -f1 -m"*.cpp" -m"cpp.*" -b5 -amd5</code></p>
+<p><code>bayan -d./test -d"./libs" -e"./test/test 1" -l1 -f1 -m".*\\.txt" -m".*a{1,}.*" -b5 -amd5</code></p>
 <p>Документация: <a href="https://notzahar.github.io/bayan/">https://notzahar.github.io/bayan/</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
