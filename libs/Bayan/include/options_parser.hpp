@@ -25,9 +25,9 @@ namespace bayan {
             bool helper = false;
             std::vector<std::string> dirs = { "./" };
             std::vector<std::string> eDirs = {};
-            scanLevel level = scanLevel::current;
+            scanLevel level = scanLevel::all;
             unsigned int fileMinSize = 1;
-            std::vector<std::string> fileMasks = { "*" };
+            std::vector<std::string> fileMasks = { ".*" };
             unsigned int blockSize = 5;
             hashAlgorithm algorithm = hashAlgorithm::md5;
 

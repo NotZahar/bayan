@@ -12,7 +12,8 @@ int main(int argc, char** argv) {
     }
 
     bayan::FindDuplicates fd(std::move(options));
-    std::cout << fd.duplicates();
+    for (const auto& d : fd.duplicates())
+        std::cout << d << '\n';
 
     return 0;
 }

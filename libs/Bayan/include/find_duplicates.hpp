@@ -1,7 +1,10 @@
 #ifndef FIND_DUPLICATES_H
 #define FIND_DUPLICATES_H
 
-#include <unordered_set>
+#include <boost/filesystem/file_status.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/unordered_set.hpp>
+#include <boost/regex.hpp>
 
 #include "options_parser.hpp"
 #include "../src/helper.hpp"
@@ -13,12 +16,21 @@ namespace bayan {
         explicit FindDuplicates(OptionsParser::Options options);
         ~FindDuplicates() = default;
 
-        std::string duplicates() const;
+        boost::unordered_set<boost::filesystem::path> duplicates() const;
 
     private:
-        std::unordered_set<std::string> _scanDirs;
-        std::unordered_set<std::string> _scanEDirs;
-        std::unordered_set<std::string> _fileMasks;
+        enum class fileType {
+            regular,
+            directory,
+            other  
+        };
+
+        fileType getFileType(const boost::filesystem::directory_entry& file) const;
+        bool filterPassed(const boost::filesystem::path& path) const;
+
+        boost::unordered_set<boost::filesystem::path> _scanDirs;
+        boost::unordered_set<boost::filesystem::path> _scanEDirs;
+        boost::unordered_set<boost::regex> _fileMasks;
         scanLevel _level;
         unsigned int _fileMinSize;
         unsigned int _blockSize;
