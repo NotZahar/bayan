@@ -12,7 +12,7 @@ namespace bayan {
 
     enum class hashAlgorithm : unsigned int {
         crc32,
-        md5
+        sha1
     };
 
     namespace messages {

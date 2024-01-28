@@ -3,7 +3,11 @@
 
 #include <boost/filesystem/file_status.hpp>
 #include <boost/filesystem/path.hpp>
+#include <boost/flyweight/flyweight.hpp>
 #include <boost/unordered_set.hpp>
+#include <boost/unordered_map.hpp>
+#include <boost/container/set.hpp>
+#include <boost/container/vector.hpp>
 #include <boost/regex.hpp>
 
 #include "options_parser.hpp"
@@ -16,7 +20,7 @@ namespace bayan {
         explicit FindDuplicates(OptionsParser::Options options);
         ~FindDuplicates() = default;
 
-        boost::unordered_set<boost::filesystem::path> duplicates() const;
+        boost::container::set<boost::container::set<std::string>> duplicates() const;
 
     private:
         enum class fileType {
@@ -25,8 +29,22 @@ namespace bayan {
             other  
         };
 
+        struct FilterResult {
+            bool passed;
+            unsigned int fileSize;
+        };
+
+        struct FileInfo {
+            boost::filesystem::path path;
+            unsigned int size;
+        };
+
+        using scanFiles_t = boost::unordered_map<unsigned int, boost::container::vector<boost::filesystem::path>>;
+
+        scanFiles_t getFilesToFind() const;
+        boost::container::set<boost::container::set<std::string>> findDuplicates(scanFiles_t scanFiles) const;
         fileType getFileType(const boost::filesystem::directory_entry& file) const;
-        bool filterPassed(const boost::filesystem::path& path) const;
+        FilterResult filterPassed(const boost::filesystem::path& path) const;
 
         boost::unordered_set<boost::filesystem::path> _scanDirs;
         boost::unordered_set<boost::filesystem::path> _scanEDirs;

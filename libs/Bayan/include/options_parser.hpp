@@ -19,7 +19,7 @@ namespace bayan {
         inline static const boost::bimap<std::string, hashAlgorithm> hashAlgorithms = 
             boost::assign::list_of<boost::bimap<std::string, hashAlgorithm>::relation>
             ( "crc32", hashAlgorithm::crc32 )
-            ( "md5", hashAlgorithm::md5 );
+            ( "sha1", hashAlgorithm::sha1 );
 
         struct Options {
             bool helper = false;
@@ -29,7 +29,7 @@ namespace bayan {
             unsigned int fileMinSize = 1;
             std::vector<std::string> fileMasks = { ".*" };
             unsigned int blockSize = 5;
-            hashAlgorithm algorithm = hashAlgorithm::md5;
+            hashAlgorithm algorithm = hashAlgorithm::sha1;
 
             friend std::ostream& operator<<(std::ostream& os, const Options& options);
         };
