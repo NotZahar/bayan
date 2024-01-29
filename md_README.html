@@ -76,11 +76,11 @@ $(function() {
  <b>-f</b> минимальный размер файла (&gt;= <code>1</code>) <br  />
  <b>-m</b> маски имен файлов разрешенных для сравнения (регулярное выражение, параметр указывается в конце) <br  />
  <b>-b</b> размер блока чтения <br  />
- <b>-a</b> алгоритм хэширования (<code>crc32</code>, <code>md5</code>) <br  />
+ <b>-a</b> алгоритм хэширования (<code>crc32</code>, <code>sha1</code>) <br  />
 </p>
 <h4><a class="anchor" id="autotoc_md2"></a>
 Пример:</h4>
-<p><code>bayan -d./test -d"./libs" -e"./test/test 1" -l1 -f1 -m".*\\.txt" -m".*a{1,}.*" -b5 -amd5</code></p>
+<p><code>bayan -d./test -d"./libs" -e"./test/test 1" -l1 -f1 -m".*\\.txt" -m".*a{1,}.*" -b5 -acrc32</code></p>
 <p>Документация: <a href="https://notzahar.github.io/bayan/">https://notzahar.github.io/bayan/</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
