@@ -35,7 +35,7 @@ namespace bayan {
             _fileMasks.insert(boost::regex{ fileMask });
     }
 
-    boost_cr::set<boost_cr::set<std::string>> FindDuplicates::duplicates() const {
+    boost_cr::set<boost_cr::set<boost_fs::path>> FindDuplicates::duplicates() const {
         auto files = getFilesToFind();
         return findDuplicates(std::move(files));
     }
@@ -50,9 +50,11 @@ namespace bayan {
             const auto result = filterPassed(path);
             if (!result.passed)
                 return;
+            
             if (scanFiles.contains(result.fileSize))
-                scanFiles[result.fileSize].push_back(path);
-            scanFiles.insert({ result.fileSize, { path } });
+                scanFiles[result.fileSize].insert(path);
+            else
+                scanFiles.insert({ result.fileSize, { path } });
         };
         
         auto pushDir = [this, &notLookedDirs](const boost_fs::path& path) {
@@ -82,47 +84,63 @@ namespace bayan {
         return scanFiles;
     }
 
-    boost_cr::set<boost_cr::set<std::string>> FindDuplicates::findDuplicates(
+    boost_cr::set<boost_cr::set<boost_fs::path>> FindDuplicates::findDuplicates(
         scanFiles_t scanFiles) const {
-        boost_cr::set<boost_cr::set<std::string>> duplicates;
+        boost_cr::set<boost_cr::set<boost_fs::path>> duplicates;
         if (scanFiles.size() < 2ul)
             return duplicates;
 
-        for (const auto& [fileSize, files] : scanFiles) {
+        auto getBlockHash = [this](const boost_fs::path& file, unsigned int offset) -> unsigned long {
+            std::ifstream reader(file, std::ifstream::binary);
+            std::string buffer(_blockSize, '\0');
+            reader.seekg(offset);
+            reader.read(&buffer[0], _blockSize);
+
+            switch (_algorithm) {
+            case hashAlgorithm::crc32: {
+                boost::crc_32_type crc32Hash;
+                crc32Hash.process_bytes(buffer.data(), buffer.length());
+                return crc32Hash.checksum();
+            }
+            case hashAlgorithm::sha1: {
+                boost::compute::detail::sha1 shaHash{ buffer };
+                return std::hash<std::string>{}(shaHash);
+            }
+            }
+
+            return {};
+        };
+
+        // main algorithm
+        for (auto& [fileSize, files] : scanFiles) {
             if (files.size() <= 1ul)
                 continue;
 
-            for (const auto& file : files) {
-                file.filename(); // TODO: [here]
+            for (unsigned int offset = 0; offset < fileSize; offset += _blockSize) {
+                boost::unordered_map<unsigned long, boost_fs::path> uniqueFiles;
+                boost::unordered_set<unsigned long> uniqueBlocks;
+                for (const auto& file : files) {
+                    const auto blockHash = getBlockHash(file, offset); 
+                    if (!uniqueBlocks.contains(blockHash)) {
+                        uniqueBlocks.insert(blockHash);
+                        uniqueFiles.insert({ blockHash, file });
+                        continue;
+                    }
+
+                    uniqueFiles.erase(blockHash);
+                }
+
+                for (const auto& uFile : uniqueFiles)
+                    files.erase(uFile.second);
+            }
+
+            // extra step
+            if (!files.empty()) {
+                boost_cr::set<boost_fs::path> dFiles;
+                boost::range::for_each(files, [&dFiles](const auto& file) { dFiles.insert(file); });
+                duplicates.insert(dFiles);
             }
         }
-        // struct data {
-        //     boost_fw::flyweight<unsigned long> 
-        // };
-        
-        // boost::unordered_map<std::string, > filesData;
-        // for (auto& file : files) {
-            
-            
-            // std::ifstream reader(file, std::ifstream::binary);
-            // std::string buffer(_blockSize, '\0');
-            // reader.read(&buffer[0], _blockSize);
-            
-            // boost::crc_32_type hashResult;
-            // hashResult.process_bytes(buffer.data(), buffer.length());
-
-            // boost::crc_32_type hashResult2;
-            // hashResult2.process_bytes(buffer.data(), buffer.length());
-            
-            // boost::compute::detail::sha1 shaHash1{ buffer };
-            // std::string shaRes1{ shaHash1 };
-            // // auto d = std::hash<std::string>{}(shaRes1);
-
-            // // boost::compute::detail::sha1 shaHash2{ buffer };
-            // // std::string shaRes2{ shaHash2 };
-
-            // std::cout << hashResult.checksum() << ' ' << hashResult2.checksum();
-        // }
 
         return duplicates;
     }

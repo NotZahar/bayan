@@ -29,7 +29,7 @@ namespace bayan {
             unsigned int fileMinSize = 1;
             std::vector<std::string> fileMasks = { ".*" };
             unsigned int blockSize = 5;
-            hashAlgorithm algorithm = hashAlgorithm::sha1;
+            hashAlgorithm algorithm = hashAlgorithm::crc32;
 
             friend std::ostream& operator<<(std::ostream& os, const Options& options);
         };
